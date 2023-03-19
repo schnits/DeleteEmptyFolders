@@ -22,10 +22,23 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DeleteEmptyDir {
-private static final String FOLDER_LOCATION = "I:\\video";
+private static  String FOLDER_LOCATION = "";
 private static boolean isFinished = false;
 
 public static void main(String[] args) {
+
+
+
+     if(args.length == 0)
+    {
+        System.out.println("Proper Usage is: java ListFiles <PATH>");
+        System.exit(0);
+    }
+
+
+		FOLDER_LOCATION = 	args[0].replaceAll("\"", "\\\\\"");
+
+
 
     do {
         isFinished = true;
